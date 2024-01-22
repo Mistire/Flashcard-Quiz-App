@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="appVbox" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1339.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+   <children>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <MenuBar fx:id="mainMenuBar" HBox.hgrow="ALWAYS">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <Button fx:id="btnLogout" mnemonicParsing="false" onAction="#logoutUser" text="Logout" textFill="#ae0505" />
+         </children>
+      </HBox>
+      <AnchorPane fx:id="welcomeHome" prefHeight="1005.0" prefWidth="1220.0">
+         <children>
+            <Label alignment="CENTER" layoutY="205.0" prefHeight="16.0" prefWidth="1220.0" text="WELLCOME TO FLASHCARD QUIZ APP" textFill="#0b861f">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnSignUp" layoutX="619.0" layoutY="289.0" mnemonicParsing="false" onAction="#showSignUpPage" text="SIGN UP" textFill="#0a8016">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnLogin" layoutX="467.0" layoutY="289.0" mnemonicParsing="false" onAction="#showLoginPage" text="LOGIN" textFill="#07a81a">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Button>
+         </children></AnchorPane>
+      <VBox fx:id="homeVbox" prefHeight="1005.0" prefWidth="1220.0">
+	      <SplitPane fx:id="homeSplitPane" dividerPositions="0.5" prefHeight="1005.0" prefWidth="1220.0">
+	        <items>
+               <VBox fx:id="leftVbox" maxWidth="300.0" minWidth="200.0" prefHeight="654.0" prefWidth="516.0">
+                  <children>
+	                  <TreeView fx:id="subjectTreeView" minWidth="200.0" prefHeight="499.0" prefWidth="300.0" />
+                     <VBox fx:id="fileEditVbox" prefHeight="235.0" prefWidth="300.0" />
+                  </children>
+               </VBox>
+	          <VBox fx:id="mainVbox" prefHeight="200.0" prefWidth="100.0">
+	               <children>
+                     <FlowPane minHeight="39.0" prefHeight="39.0" prefWidth="911.0">
+                        <children>
+                           <Label fx:id="topBarLabel" alignment="CENTER" minWidth="400.0" prefHeight="37.0" prefWidth="804.0" text="No Topic Selected" textFill="#099734">
+                              <font>
+                                 <Font size="28.0" />
+                              </font>
+                           </Label>
+                           <Button mnemonicParsing="false" text="Practice" textFill="#068626">
+                              <font>
+                                 <Font size="20.0" />
+                              </font>
+                           </Button>
+                        </children>
+                     </FlowPane>
+	                  <ListView fx:id="flashCardView" prefHeight="1005.0" prefWidth="911.0" />
+	               </children>
+	            </VBox>
+	        </items>
+	      </SplitPane>
+	    </VBox>
+   </children>
+</VBox>
